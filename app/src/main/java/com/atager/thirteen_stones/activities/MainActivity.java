@@ -1,8 +1,10 @@
 package com.atager.thirteen_stones.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.atager.thirteen_stones.R;
+import com.atager.thirteen_stones.lib.DialogUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -48,10 +50,46 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_new_game:
+                startNewGame();
+                return true;
+
+            case R.id.action_view_stats:
+                showStats();
+                return true;
+
+            case R.id.action_reset_stats:
+                //model reset
+                return true;
+
+            case R.id.action_settings:
+                showSettings();
+                return true;
+
+            case R.id.action_about:
+                showAbout();
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void startNewGame() {
+
+    }
+
+    private void showStats() {
+        Intent intent = new Intent(getApplicationContext(), StatsActivity.class);
+        startActivity(intent);
+    }
+
+    private void showSettings() {
+
+    }
+
+    private void showAbout() {
+        DialogUtils.showInfoDialog(this, "About 13 Stones",
+                "Fun game and interesting to learn app development.");
     }
 }

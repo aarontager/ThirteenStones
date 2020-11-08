@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android = "http://schemas.android.com/apk/res/android"
+  xmlns:tools = "http://schemas.android.com/tools"
+  tools:showIn = "@layout/content_main">
+
+    <include layout = "@layout/content_main_include_card_image_stones"/>
+    <include layout = "@layout/content_main_include_card_buttons"/>
+</merge>
